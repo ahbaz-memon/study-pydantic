@@ -13,7 +13,8 @@ def insert_patient_data(patient: Patient):
     print("data inserted!")
 
 # raw data
-patient_info = {'name': 'Sid', 'age': 30}
+# patient_info = {'name': 'Sid', 'age': 'thirty'}
+patient_info = {'name': 'Sid', 'age': '30'}
 
 # calling
 patient = Patient(**patient_info)
