@@ -9,6 +9,9 @@ def insert_patient_data(name: str, age: int): # type hinting
 
             print("data inserted!")
         else:
-            ValueError("Age cannot be negative!")
+            raise ValueError("Age cannot be negative!")
     else:
         raise TypeError("Wrong data types!")
+    
+# called by junior programmer
+insert_patient_data('Rahul', -10)
