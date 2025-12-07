@@ -1,5 +1,5 @@
 # function written by senior programmer
-def insert_patient_data(name, age):
+def insert_patient_data(name: str, age: int): # type hinting
 
     # assuming database code
     print(name)
