@@ -13,7 +13,7 @@ class Patient(BaseModel):
     age: int = Field(ge=18, lt=60) # 18 <= age < 60
     email: EmailStr # built-in email validation
     linkedin: AnyUrl # url validation
-    weight: float = Field(gt=0) # only positive
+    weight: float = Field(gt=0, strict=True) # only positive
     married: bool = False # setting default val
     allergies: Optional[List[str]] = Field(max_length=5, default=None) # optional need default val
     contact: Dict[str, str] # dict, where keys & values are str
@@ -24,7 +24,7 @@ patient_info = {
     'age': 29,
     'email': 'abc@gmail.com',
     'linkedin': 'https://www.linkedin.com/in/ahbaz-memon/',
-    'weight': 62,
+    'weight': '62',
     'married': False,
     # 'allergies': ['Dust', 'Mold', 'Pollen'],
     'contact': {
