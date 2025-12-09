@@ -4,7 +4,12 @@ from typing import List, Dict, Optional
 # ideal schema
 class Patient(BaseModel):
     
-    name: str = Field(max_length=50)
+    name: str = Field(
+        max_length=50,
+        title='patient name',
+        description='give the name of patient',
+        examples=['Ratan', 'Jatin'],
+    )
     age: int = Field(ge=18, lt=60) # 18 <= age < 60
     email: EmailStr # built-in email validation
     linkedin: AnyUrl # url validation
