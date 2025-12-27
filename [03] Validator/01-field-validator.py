@@ -11,6 +11,12 @@ class Patient(BaseModel):
     email: EmailStr
     contact_details: Dict[str, str]
 
+    @field_validator('name')
+    @classmethod
+    def name_transformation(cls, value):
+
+        return value.upper()
+
     @field_validator('email')
     @classmethod
     def email_domain_validator(cls, value): # cls for class instance, to get other function
