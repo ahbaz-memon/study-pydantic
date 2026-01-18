@@ -36,5 +36,5 @@ print(type(dumped))
 pprint(dumped)
 
 # controlling field, while exporting
-dumped = employee.model_dump(include=['name', 'age'])
+dumped = employee.model_dump(exclude={'address': ['country']})
 pprint(dumped)
