@@ -28,4 +28,9 @@ employee_info = {
     })
 }
 employee = Employee(**employee_info)
-pprint(employee)
+
+
+# exporting model in python dict
+dumped = employee.model_dump()
+print(type(dumped))
+pprint(dumped)
