@@ -34,3 +34,7 @@ employee = Employee(**employee_info)
 dumped = employee.model_dump()
 print(type(dumped))
 pprint(dumped)
+
+# controlling field, while exporting
+dumped = employee.model_dump(include=['name', 'age'])
+pprint(dumped)
