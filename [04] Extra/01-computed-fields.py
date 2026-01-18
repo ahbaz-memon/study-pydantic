@@ -1,5 +1,5 @@
 from typing import List, Dict
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, computed_field
 
 class Patient(BaseModel):
 
@@ -11,6 +11,12 @@ class Patient(BaseModel):
     married: bool
     email: EmailStr
     contact_details: Dict[str, str]
+
+    @computed_field
+    @property
+    def bmi(self) -> float:
+        bmi = self.weight / (self.height ** 2)
+        return round(bmi, 2)
 
 
 patient_info = {
